@@ -15,7 +15,6 @@ body {
 
 .container {
   width: 90%;
-
   margin: 0 auto;
   overflow: hidden;
   max-width: 1200px;
@@ -35,8 +34,89 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+
+  z-index: 100;
+  transition: background-image .3s;
+}
+
+.nav__hamburguer--open {
+  background-image: url("../images/icon-close-menu.svg");
 }
 
 .nav__overlay {
   background-color: #000000a7;
+  position: fixed;
+  inset: 0;
+}
+
+.nav__menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  width: 65%;
+  max-width: 400px;
+  padding: 0;
+  list-style: none;
+  overflow: auto;
+  padding: 70px 0;
+}
+
+.nav__item {
+  width: 80%;
+  margin: 0 auto;
+  color: var(--almost-black);
+  cursor: pointer;
+  padding: 20px 0;
+}
+
+.nav__item:has(.nav__parent) {
+  /* has: pseudoclase que indica que todos los elementos que tengan como hijo un elemento con la clase nav__parent cumplan lo siguiente:  */
+  padding: 0;
+}
+
+.nav__inner {
+  list-style: none;
+  padding: 0;
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  overflow: hidden;
+  height: 0;
+  transition: height .4s;
+}
+
+.nav__parent {
+  display: grip;
+  align-items: center;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 1.3em;
+  padding: 20px 0;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--almost-black);
+
+}
+
+.nav__login {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nav__login--border {
+  border-radius: 1em;
+  margin-top: 20px;
+  border: 1px solid var(--medium-gray);
+}
+
+.nav__sign {
+  display: inline-block;
+  color: var(--medium-gray);
+  padding: .7em 0;
+  text-decoration: none;
 }
