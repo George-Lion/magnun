@@ -1,0 +1,42 @@
+:root {
+  --almost-white: hsl(0, 0%, 98%);
+  --medium-gray: hsl(0, 0%, 41%);
+  --almost-black: hsl(0, 0%, 8%);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Epilogue', sans-serif;
+}
+
+.container {
+  width: 90%;
+
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 1200px;
+}
+
+.nav {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__hamburguer {
+  width: 30px;
+  height: 50%;
+  background-image: url("../images/icon-menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.nav__overlay {
+  background-color: #000000a7;
+}
